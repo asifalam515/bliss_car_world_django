@@ -22,7 +22,7 @@
               <p class="card-text"> {{ car.description }}</p>
               <h4> {{car.brand.brandName}} </h4>
               {% if  user.is_authenticated %}  
-    <a class='btn btn-danger' href=" {% url "purchase_car"  %}"> Buy Now</a>    
+    <a class='btn btn-danger' href=" {% url "purchase_car" car.id %}"> Buy Now</a>    
 
     {% endif %}
             </div>

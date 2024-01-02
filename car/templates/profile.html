@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h2>{{ user.username }}'s Profile</h2>
+    <h3>Bought Cars</h3>
+    {% if user_purchases %}
+        <ul>
+            {% for purchase in user_purchases %}
+                <li>
+                    <strong>{{ purchase.car.title }}</strong> - {{ purchase.car.price }}$
+                    {% comment %} <p>Purchased on: {{ purchase.purchase_date }}</p> {% endcomment %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No cars purchased yet.</p>
+    {% endif %}
+</div>
+{% endblock content %}

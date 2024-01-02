@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-success">Purchase Successful</h2>
+    <p>Thank you for your purchase! Your order has been confirmed.</p>
+    <p>Details of your purchase:</p>
+    <img src=" {{car.image.url}} " class="card-img-top" alt="...">
+    <ul>
+        <li><strong>Car Title:</strong> {{ car.title }}</li>
+        <li><strong>Description:</strong> {{ car.description }}</li>
+        <li><strong>Price:</strong> {{ car.price }}$</li>
+    </ul>
+    
+</div>
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+{% if user.is_authenticated %}
+<div class="m-auto w-25">
+<p>Welcome<h1 class="text-primary"> {{user.username}}</h1> </p>
+
+</div>
+{% endif %}
+<div class='row m-2'>
+    
+   {% for car in data %}
+   <div class="card col-3 p-2 m-5" >
+    <img src=" {{car.image.url}} " class="card-img-top" alt="...">
+    <div class="card-body">
+        <h3> {{car.title}} </h3>
+      <p class="card-text"> {{car.description | truncatewords:20 }} </p>
+     <h3> {{car.price}}$  </h3> 
+   
+<a class='btn btn-primary' href=" {% url "car_detail" car.id %}"> Car Detail</a>    
+
+</div>
+  </div>
+    
+   {% endfor %}
+</div>
+{% endblock content %}
